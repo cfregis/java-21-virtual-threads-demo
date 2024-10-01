@@ -4,23 +4,12 @@ import java.net.URL;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class MainWIthBlockingOps {
+public class MainWithBlockingOps {
     public static void main(String[] args) {
 
         System.out.println("Hello world!");
 
-//        callPlatformThreads();
         callVirtualThreads();
-    }
-
-
-    private static void callPlatformThreads() {
-        try (ExecutorService executor = Executors.newFixedThreadPool(5)) {
-            for (int i = 0; i <= 10; i++) {
-                String taskName = "Task" + i;
-                executor.execute(() -> callService(taskName));
-            }
-        }
     }
 
     private static void callVirtualThreads() {
